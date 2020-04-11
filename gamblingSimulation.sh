@@ -76,9 +76,9 @@ done
 
 calculateAmountWinOrLose
 if [[ $amountWon -ge '50' ]]; then
-  NEXT_MONTH="Continue playing next month"
-  else
-	  NEXT_MONTH="Stop Gambling"
+	NEXT_MONTH="Continue playing next month"
+else
+	NEXT_MONTH="Stop Gambling"
 fi
 
 
