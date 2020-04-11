@@ -17,12 +17,33 @@ done
 	loses[((LOSE_COUNT++))]=$LOSE	
 }
 
+calculateAmountWinOrLose(){
+for (( i = 1 ; i<= $NO_OF_DAYS ;i++ )); do
+	if [[ ${wins[i]} -gt ${loses[i]} ]]; then
+		NO_OF_WINS=$((NO_OF_WINS +1))
+	else
+		NO_OF_LOSES=$((NO_OF_LOSES +1))
+	fi
+done
+if [[ $NO_OF_WINS -gt $NO_OF_LOSES ]];then
+	amountWon=$((NO_OF_WINS * 50))
+else
+	amountLost=$((NO_OF_LOSES * 50))
+fi
+
+
+}
+
+
+
+
 for (( i = 1;i <= $NO_OF_DAYS ; i++  )); do
 	STAKE=100
 	WIN=0
 	LOSE=0
 	calculateWinOrLose 
-		
 done
+
+calculateAmountWinOrLose
 
 
