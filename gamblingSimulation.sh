@@ -2,6 +2,10 @@
 STAKE=100
 BET=1
 NO_OF_DAYS=20
+declare amountWon
+declare amountLost
+declare NEXT_MONTH
+
 
 calculateWinOrLose(){
 while [[ $STAKE -lt '150' &&  $STAKE -gt '50' ]]; do
@@ -71,6 +75,11 @@ for (( i = 1;i <= $NO_OF_DAYS ; i++  )); do
 done
 
 calculateAmountWinOrLose
+if [[ $amountWon -ge '50' ]]; then
+  NEXT_MONTH="Continue playing next month"
+  else
+	  NEXT_MONTH="Stop Gambling"
+fi
 
 
 
