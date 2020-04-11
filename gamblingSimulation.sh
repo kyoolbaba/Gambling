@@ -33,13 +33,7 @@ else
 	amountOfDaysWon=$(( NO_OF_DAYS - NO_OF_LOSES ))
 	amountLost=$(((NO_OF_LOSES - amountOfDaysLost) * 50))
 fi
-
-
 }
-
-
-
-
 for (( i = 1;i <= $NO_OF_DAYS ; i++  )); do
 	STAKE=100
 	WIN=0
